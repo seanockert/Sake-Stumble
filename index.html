@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+  <meta charset="utf-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Sake Stumble">  
+        <meta name="viewport" content="width=device-width, initial-scale=1,minimal-ui">
+        <link rel="apple-touch-icon-precomposed" href="assets/icon.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/icon.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/icon.png" />
+
+  <title>Sake Stumble</title>
+
+  <style>
+    @font-face { 
+      font-family: 'Blocky'; src: url('fonts/block.TTF'); 
+    }
+  
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Blocky', sans-serif;
+    }
+  
+    #game_div {
+      width: 320px;
+      margin: auto;
+      background: #71c5cf;
+    }
+    
+    #preload-font {
+      font-family: 'Blocky', sans-serif;
+      text-indent: -9999px;
+      font-size: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+  <span id="preload-font"> </span>
+  <div id="game_div"> </div>
+</body>
+
+<script type="text/javascript" src="js/vendor/phaser-no-physics.min.js"></script>
+<script type="text/javascript" src="js/game.js"></script>
+<script type="text/javascript" src="js/level.js"></script>
+<script type="text/javascript" src="js/player.js"></script>
+<script type="text/javascript" src="js/menus.js"></script>
+<script type="text/javascript" src="js/hud.js"></script>
+
+<script>
+// Init
+game.state.add('boot', Game.Boot);  
+game.state.add('menu', Game.Title);  
+game.state.add('game', Game.Game);  
+game.state.add('gameover',Game.GameOver);
+
+game.state.start('boot'); 
+</script>
+
+
+</html>
